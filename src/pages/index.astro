@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EntryCard from "../components/EntryCard.astro";
+import { getCollection } from "astro:content";
+
+const entries = await getCollection("entries");
+---
+
+<BaseLayout>
+  <section class="grid">
+    {entries.map((entry) => (
+      <EntryCard entry={entry}>
+        <p>{entry.data.description}</p>
+      </EntryCard>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+</style>

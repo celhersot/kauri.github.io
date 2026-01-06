@@ -1,0 +1,60 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kauri — Arte, Tecnología y Espíritu</title>
+  </head>
+  <body>
+    <header class="window">
+      <div class="title-bar">
+        <span>🌸 Kauri.exe</span>
+      </div>
+      <div class="window-content">
+        <h1>Kauri</h1>
+        <p class="subtitle">Arte · Tecnología · Espíritu</p>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="window small">
+      <div class="window-content">
+        espacio de calma digital ✿
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+.window {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 var(--pink);
+  margin-bottom: 2rem;
+}
+
+.small {
+  max-width: 400px;
+  margin: 4rem auto;
+}
+
+.title-bar {
+  background: linear-gradient(90deg, var(--pink), var(--peach));
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+.window-content {
+  padding: 1rem 1.2rem;
+}
+
+.subtitle {
+  opacity: 0.8;
+}
+</style>
